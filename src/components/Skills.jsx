@@ -1,45 +1,9 @@
-import { Code2, Server, Monitor, Database, Wrench, GitBranch } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { skillCategories } from '../data/skills';
 import './Skills.css';
 
-const ICONS = { Code2, Server, Monitor, Database, Wrench, GitBranch };
-
-function SkillBar({ name, level, isVisible }) {
-  return (
-    <div className="skill-bar">
-      <div className="skill-bar__header">
-        <span className="skill-bar__name">{name}</span>
-        <span className="skill-bar__level">{level}%</span>
-      </div>
-      <div className="skill-bar__track">
-        <div
-          className="skill-bar__fill"
-          style={{ width: isVisible ? `${level}%` : '0%' }}
-        />
-      </div>
-    </div>
-  );
-}
-
-function SkillCategory({ title, icon, skills, isVisible, delay }) {
-  const Icon = ICONS[icon] || Code2;
-  return (
-    <div className={`skill-card card reveal reveal-delay-${delay} ${isVisible ? 'visible' : ''}`}>
-      <div className="skill-card__header">
-        <div className="skill-card__icon">
-          <Icon size={18} />
-        </div>
-        <h3 className="skill-card__title">{title}</h3>
-      </div>
-      <div className="skill-card__skills">
-        {skills.map((skill) => (
-          <SkillBar key={skill.name} name={skill.name} level={skill.level} isVisible={isVisible} />
-        ))}
-      </div>
-    </div>
-  );
-}
+const LEVEL_LABEL = (n) => n >= 85 ? 'Strong' : n >= 75 ? 'Solid' : 'Familiar';
+const LEVEL_COLOR = (n) => n >= 85 ? 'tag-purple' : n >= 75 ? 'tag-blue' : 'tag-gray';
 
 export default function Skills() {
   const [ref, isVisible] = useIntersectionObserver();
@@ -47,27 +11,41 @@ export default function Skills() {
   return (
     <section id="skills" className="skills" ref={ref}>
       <div className="container">
-        <div className="skills__header">
-          <p className="section-label">Technical Skills</p>
-          <h2 className="section-title">
-            Tools I build <span className="gradient-text">real things</span> with
-          </h2>
+        <div className={`reveal ${isVisible ? 'visible' : ''}`}>
+          <p className="label">Skills</p>
+          <h2 className="section-title">What I work with</h2>
           <div className="divider" />
-          <p className="section-subtitle">
-            Focused on backend and full-stack development. Every skill listed here
-            has been applied in a real project — not just classroom exercises.
+          <p className="section-sub">
+            Every skill here has been applied in a real project, not just a tutorial.
           </p>
         </div>
 
         <div className="skills__grid">
           {skillCategories.map((cat, i) => (
-            <SkillCategory
+            <div
               key={cat.title}
-              {...cat}
-              isVisible={isVisible}
-              delay={Math.min(i + 1, 5)}
-            />
+              className={`skills__cat reveal reveal-delay-${Math.min(i + 1, 5)} ${isVisible ? 'visible' : ''}`}
+            >
+              <h3 className="skills__cat-title">{cat.title}</h3>
+              <div className="skills__tags">
+                {cat.skills.map(({ name, level }) => (
+                  <div key={name} className="skills__tag-item">
+                    <span className={`tag ${LEVEL_COLOR(level)}`}>{name}</span>
+                    <span className={`skills__level tag ${LEVEL_COLOR(level)}`}>{LEVEL_LABEL(level)}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           ))}
+        </div>
+
+        {/* Legend */}
+        <div className={`skills__legend reveal reveal-delay-3 ${isVisible ? 'visible' : ''}`}>
+          <span className="tag tag-purple">Strong</span> confident, production-used
+          <span className="skills__legend-sep" />
+          <span className="tag tag-blue">Solid</span> comfortable, multiple projects
+          <span className="skills__legend-sep" />
+          <span className="tag tag-gray">Familiar</span> working knowledge
         </div>
       </div>
     </section>

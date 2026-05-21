@@ -47,9 +47,8 @@ export default function Navbar() {
             className="navbar__logo"
             onClick={(e) => { e.preventDefault(); handleNavClick('#hero'); }}
           >
-            <span className="navbar__logo-bracket">&lt;</span>
             JN
-            <span className="navbar__logo-bracket">/&gt;</span>
+            <span className="navbar__logo-dot" />
           </a>
 
           {/* Desktop nav */}
