@@ -14,7 +14,7 @@ export default function Achievements() {
       <div className="container">
         <div className={`reveal ${isVisible ? 'visible' : ''}`}>
           <p className="label">Recognition</p>
-          <h2 className="section-title">Earned, not claimed</h2>
+          <h2 className="section-title">Achievement</h2>
           <div className="divider" />
         </div>
 

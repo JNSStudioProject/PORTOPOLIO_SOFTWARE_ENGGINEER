@@ -2,13 +2,6 @@ import { GraduationCap, Globe, Star, MapPin } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import './About.css';
 
-const FACTS = [
-  { icon: GraduationCap, label: 'GPA 3.99 / 4.00', sub: 'Cum Laude — Politeknik Caltex Riau', color: 'purple' },
-  { icon: Globe, label: 'International Exchange', sub: 'Politeknik Mersing Johor, Malaysia 2024', color: 'blue' },
-  { icon: Star, label: 'Regional Scholarship', sub: 'Riau Government Academic Excellence', color: 'orange' },
-  { icon: MapPin, label: 'Pekanbaru, Riau', sub: 'Open to hybrid & remote roles', color: 'green' },
-];
-
 export default function About() {
   const [ref, isVisible] = useIntersectionObserver();
 
@@ -48,19 +41,33 @@ export default function About() {
             </div>
           </div>
 
-          {/* Facts */}
-          <div className="about__facts">
-            {FACTS.map(({ icon: Icon, label, sub, color }, i) => (
-              <div key={label} className={`about__fact card reveal reveal-delay-${i + 1} ${isVisible ? 'visible' : ''}`}>
-                <div className={`about__fact-icon about__fact-icon--${color}`}>
-                  <Icon size={17} />
-                </div>
-                <div>
-                  <p className="about__fact-label">{label}</p>
-                  <p className="about__fact-sub">{sub}</p>
-                </div>
-              </div>
-            ))}
+          {/* Bento Box */}
+          <div className={`about__bento reveal reveal-delay-2 ${isVisible ? 'visible' : ''}`}>
+            
+            <div className="about__bento-card">
+              <div className="about__bento-icon about__fact-icon--purple"><GraduationCap size={18} /></div>
+              <p className="about__bento-title">GPA 3.99 / 4.00</p>
+              <p className="about__bento-sub">Cum Laude — Politeknik Caltex Riau</p>
+            </div>
+
+            <div className="about__bento-card">
+              <div className="about__bento-icon about__fact-icon--green"><MapPin size={18} /></div>
+              <p className="about__bento-title">Pekanbaru, Riau</p>
+              <p className="about__bento-sub">Hybrid &amp; Remote ready</p>
+            </div>
+
+            <div className="about__bento-card">
+              <div className="about__bento-icon about__fact-icon--blue"><Globe size={18} /></div>
+              <p className="about__bento-title">Intl. Exchange</p>
+              <p className="about__bento-sub">Politeknik Mersing Johor</p>
+            </div>
+
+            <div className="about__bento-card">
+              <div className="about__bento-icon about__fact-icon--orange"><Star size={18} /></div>
+              <p className="about__bento-title">Scholarship</p>
+              <p className="about__bento-sub">Riau Academic Excellence</p>
+            </div>
+
           </div>
         </div>
       </div>

@@ -5,14 +5,14 @@ import './Navbar.css';
 
 const NAV_LINKS = [
   { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#experience', label: 'Experience' },
   { href: '#achievements', label: 'Achievements' },
-  { href: '#leadership', label: 'Leadership' },
   { href: '#contact', label: 'Contact' }
 ];
 
-const SECTION_IDS = ['about', 'skills', 'projects', 'achievements', 'leadership', 'contact'];
+const SECTION_IDS = ['about', 'projects', 'skills', 'experience', 'achievements', 'contact'];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +47,7 @@ export default function Navbar() {
             className="navbar__logo"
             onClick={(e) => { e.preventDefault(); handleNavClick('#hero'); }}
           >
-            JN
+            JNS
             <span className="navbar__logo-dot" />
           </a>
 
@@ -68,7 +68,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <a
-            href="/CV_Muhammad_Juna_Nasri.pdf"
+            href="/CV_Jessica_Nathania.pdf"
             className="btn btn-primary navbar__cta"
             download
           >
@@ -102,7 +102,7 @@ export default function Navbar() {
             ))}
             <li>
               <a
-                href="/CV_Muhammad_Juna_Nasri.pdf"
+                href="/CV_Jessica_Nathania.pdf"
                 className="btn btn-primary"
                 download
                 style={{ width: '100%', justifyContent: 'center', marginTop: '0.5rem' }}

@@ -11,12 +11,10 @@ export default function Projects() {
       <div className="container">
         <div className={`reveal ${isVisible ? 'visible' : ''}`}>
           <p className="label">Projects</p>
-          <h2 className="section-title">What I&apos;ve built</h2>
+          <h2 className="section-title">Projects</h2>
           <div className="divider" />
           <p className="section-sub">
-            Three completed projects. Each is documented as an engineering case study using the{' '}
-            <strong>WHY / HOW / WHAT / EFFECT</strong> framework.
-            Hit <em>&ldquo;Read case study&rdquo;</em> to see the full breakdown.
+            Three completed projects highlighting full-stack, frontend, and mobile development.
           </p>
         </div>
 

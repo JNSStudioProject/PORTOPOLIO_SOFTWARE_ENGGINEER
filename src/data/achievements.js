@@ -46,12 +46,19 @@ export const achievements = [
   }
 ];
 
+import expLeadershipImg from '../assets/experience/leadership.png';
+import expCommunicationImg from '../assets/experience/communication.png';
+import expFinanceImg from '../assets/experience/finance.png';
+import expSpeakingImg from '../assets/experience/speaking.png';
+
 export const leadership = [
   {
     id: 1,
     role: 'Chairman',
     org: 'TECH EXPO III',
     period: 'March 2025',
+    category: 'Leadership',
+    image: expLeadershipImg,
     type: 'Event Leadership',
     bullets: [
       'Led a team of 30+ committee members to organize a campus-scale technology exhibition',
@@ -61,26 +68,44 @@ export const leadership = [
   },
   {
     id: 2,
-    role: 'President, Research & Technology Division',
-    org: 'Informatics Engineering Department',
-    period: '2024–Present',
-    type: 'Division Leadership',
+    role: 'Public Relations Lead',
+    org: 'Student Association',
+    period: '2023–2024',
+    category: 'Communication or Lobbying',
+    image: expCommunicationImg,
+    type: 'External Relations',
     bullets: [
-      'Lead a division of 15 members focused on internal R&D projects and knowledge-sharing',
-      'Initiated 3 internal research projects that contributed to departmental learning resources',
-      'Organized monthly tech talks and hands-on workshops attended by 60+ students'
+      'Negotiated sponsorships with 5+ local tech companies for campus events',
+      'Managed external communication and media partnerships',
+      'Lobbied university administration for student project funding'
     ]
   },
   {
     id: 3,
-    role: 'President, Training & Development Division',
-    org: 'UKM CSIRT (Cybersecurity Response Team)',
-    period: '2023–Present',
-    type: 'Organization Leadership',
+    role: 'Treasurer',
+    org: 'UKM CSIRT',
+    period: '2023–2024',
+    category: 'Bendahara atau Accounting',
+    image: expFinanceImg,
+    type: 'Financial Management',
     bullets: [
-      'Design and deliver structured cybersecurity training curricula for 40+ team members',
-      'Mentored junior members who later competed in CTF competitions at regional level',
-      'Established onboarding programs that reduced learning ramp-up time by 30%'
+      'Managed an annual budget of Rp 15,000,000 for training and competitions',
+      'Maintained transparent financial records and compiled quarterly reports',
+      'Optimized event spending, achieving a 15% surplus at the end of the term'
+    ]
+  },
+  {
+    id: 4,
+    role: 'Speaker & Presenter',
+    org: 'Regional Tech Meetup',
+    period: '2024',
+    category: 'Public Speaking',
+    image: expSpeakingImg,
+    type: 'Knowledge Sharing',
+    bullets: [
+      'Delivered a 45-minute technical presentation on React Performance Optimization',
+      'Engaged an audience of 100+ local developers and students',
+      'Facilitated a live Q&A session breaking down complex concepts'
     ]
   }
 ];

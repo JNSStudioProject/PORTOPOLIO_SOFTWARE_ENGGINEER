@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { ChevronDown, ChevronUp, CheckCircle2, TrendingUp } from 'lucide-react';
+import { TrendingUp, ExternalLink } from 'lucide-react';
 import './ProjectCard.css';
 
 const GithubIcon = ({ size = 15 }) => (
@@ -9,13 +8,19 @@ const GithubIcon = ({ size = 15 }) => (
 );
 
 export default function ProjectCard({ project }) {
-  const [open, setOpen] = useState(false);
-  const { title, tagline, why, how, what, effect, stack, color, github } = project;
+  const { title, tagline, description, role, effect, stack, color, github, link, image } = project;
 
   return (
     <article className="pcard card" style={{ '--pcolor': color }}>
       {/* Color bar */}
       <div className="pcard__bar" />
+
+      {/* Image */}
+      {image && (
+        <div className="pcard__image-container">
+          <img src={image} alt={title} className="pcard__image" />
+        </div>
+      )}
 
       {/* Header */}
       <div className="pcard__head">
@@ -32,61 +37,42 @@ export default function ProjectCard({ project }) {
         <p className="pcard__tagline">{tagline}</p>
       </div>
 
-      {/* WHY — always visible */}
-      <div className="pcard__why">
-        <span className="pcard__frame-label">WHY</span>
-        <p className="pcard__why-headline">{why.headline}</p>
-        <p className="pcard__why-body">{why.body}</p>
+      {/* Description */}
+      <div className="pcard__desc">
+        <p className="pcard__desc-text">{description}</p>
+        <div className="pcard__role">
+          <strong>Role:</strong> {role}
+        </div>
       </div>
 
-      {/* Expandable */}
-      <div className={`pcard__expand ${open ? 'pcard__expand--open' : ''}`}>
-        {/* HOW */}
-        <div className="pcard__block">
-          <span className="pcard__frame-label pcard__frame-label--blue">HOW</span>
-          <p className="pcard__block-title">{how.headline}</p>
-          <p className="pcard__block-body">{how.body}</p>
-        </div>
-
-        {/* WHAT */}
-        <div className="pcard__block">
-          <span className="pcard__frame-label pcard__frame-label--orange">WHAT</span>
-          <p className="pcard__block-title">{what.headline}</p>
-          <ul className="pcard__features">
-            {what.features.map((f) => (
-              <li key={f}>
-                <CheckCircle2 size={12} className="pcard__check" />
-                {f}
-              </li>
-            ))}
-          </ul>
-          <div className="pcard__role">
-            <strong>My role:</strong> {what.role}
-          </div>
-        </div>
-
-        {/* EFFECT */}
-        <div className="pcard__block pcard__block--effect">
-          <span className="pcard__frame-label pcard__frame-label--green">EFFECT</span>
+      {/* Effect */}
+      {effect && effect.length > 0 && (
+        <div className="pcard__effect">
           <p className="pcard__block-title">
-            <TrendingUp size={13} /> {effect.headline}
+            <TrendingUp size={13} /> EFFECT
           </p>
           <ul className="pcard__results">
-            {effect.results.map((r) => (
-              <li key={r}>{r}</li>
+            {effect.map((r, idx) => (
+              <li key={idx}>{r}</li>
             ))}
           </ul>
         </div>
-      </div>
+      )}
 
       {/* Footer */}
       <div className="pcard__footer">
-        <button className="pcard__toggle" onClick={() => setOpen(!open)}>
-          {open ? <><ChevronUp size={14} /> Collapse</> : <><ChevronDown size={14} /> Read case study</>}
-        </button>
-        <a href={github} target="_blank" rel="noopener noreferrer" className="pcard__gh">
-          <GithubIcon /> Code
-        </a>
+        <div className="pcard__links">
+          {link && (
+            <a href={link} target="_blank" rel="noopener noreferrer" className="pcard__gh">
+              <ExternalLink size={15} /> Live
+            </a>
+          )}
+          {github && (
+            <a href={github} target="_blank" rel="noopener noreferrer" className="pcard__gh">
+              <GithubIcon /> Code
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );

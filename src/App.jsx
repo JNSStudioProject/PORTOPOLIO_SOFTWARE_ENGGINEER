@@ -16,10 +16,10 @@ function App() {
       <main>
         <Hero />
         <About />
-        <Skills />
         <Projects />
-        <Achievements />
+        <Skills />
         <Leadership />
+        <Achievements />
         <Contact />
       </main>
       <Footer />
