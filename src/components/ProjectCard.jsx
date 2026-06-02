@@ -1,4 +1,5 @@
-import { TrendingUp, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
+import { TrendingUp, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 import './ProjectCard.css';
 
 const GithubIcon = ({ size = 15 }) => (
@@ -8,6 +9,7 @@ const GithubIcon = ({ size = 15 }) => (
 );
 
 export default function ProjectCard({ project }) {
+  const [showDetails, setShowDetails] = useState(false);
   const { title, tagline, description, role, effect, stack, color, github, link, image } = project;
 
   return (
@@ -37,8 +39,24 @@ export default function ProjectCard({ project }) {
         <p className="pcard__tagline">{tagline}</p>
       </div>
 
-      {/* Description */}
-      <div className="pcard__desc">
+      {/* Toggle Button */}
+      <div className="pcard__toggle-container">
+        <button 
+          className="pcard__toggle-btn" 
+          onClick={() => setShowDetails(!showDetails)}
+        >
+          {showDetails ? (
+            <><ChevronUp size={16} /> Hide Details</>
+          ) : (
+            <><ChevronDown size={16} /> Show Details</>
+          )}
+        </button>
+      </div>
+
+      {showDetails && (
+        <>
+          {/* Description */}
+          <div className="pcard__desc">
         <p className="pcard__desc-text">{description}</p>
         <div className="pcard__role">
           <strong>Role:</strong> {role}
@@ -74,6 +92,8 @@ export default function ProjectCard({ project }) {
           )}
         </div>
       </div>
+        </>
+      )}
     </article>
   );
 }

@@ -70,6 +70,36 @@
   color: var(--text-secondary);
 }
 
+/* Toggle Details */
+.pcard__toggle-container {
+  padding: 0 var(--space-5) var(--space-4);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.pcard__toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2) 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: all var(--t-fast);
+}
+
+.pcard__toggle-btn:hover {
+  background: var(--bg-subtle);
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
 /* Description */
 .pcard__desc {
   padding: var(--space-4) var(--space-5);

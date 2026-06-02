@@ -19,9 +19,9 @@ function App() {
         <About />
         <Projects />
         <Skills />
+        <Certifications />
         <Leadership />
         <Achievements />
-        <Certifications />
         <Contact />
       </main>
       <Footer />

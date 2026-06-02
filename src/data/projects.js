@@ -30,7 +30,7 @@ export const projects = [
     category: 'Frontend Web Application',
     status: 'Completed',
     image: joblikerImg,
-    role: 'Frontend Developer',
+    role: 'Full-Stack Developer',
     description: 'LinkedIn can be overwhelming for fresh graduates in Indonesia. Therefore, I built this platform to provide a simpler, localized professional networking space.',
     effect: [
       'Built a production-ready Single Page Application with zero-reload navigation',

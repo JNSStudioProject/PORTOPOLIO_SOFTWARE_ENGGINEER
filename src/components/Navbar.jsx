@@ -7,13 +7,13 @@ const NAV_LINKS = [
   { href: '#about', label: 'About' },
   { href: '#projects', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#achievements', label: 'Achievements' },
   { href: '#certifications', label: 'Certifications' },
+  { href: '#experience', label: 'Soft Skills' },
+  { href: '#achievements', label: 'Achievements' },
   { href: '#contact', label: 'Contact' }
 ];
 
-const SECTION_IDS = ['about', 'projects', 'skills', 'experience', 'achievements', 'certifications', 'contact'];
+const SECTION_IDS = ['about', 'projects', 'skills', 'certifications', 'experience', 'achievements', 'contact'];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
