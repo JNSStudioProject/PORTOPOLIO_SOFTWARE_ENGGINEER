@@ -1,6 +1,7 @@
 import karyanusaImg from '../assets/projects/karyanusa.png';
 import joblikerImg from '../assets/projects/jobliker.png';
 import sawitMajuImg from '../assets/projects/sawit_maju.png';
+import gisVegetasiImg from '../assets/projects/gis_vegetasi.png';
 
 export const projects = [
   {
@@ -56,6 +57,25 @@ export const projects = [
     stack: ['Kotlin', 'Android', 'YOLOv11', 'Python', 'TensorFlow Lite', 'OpenCV'],
     color: '#10b981',
     github: 'https://github.com/JNSStudioProject',
+    featured: true
+  },
+  {
+    id: 'gisVegetasi',
+    title: 'Sistem Informasi Geografis Vegetasi',
+    tagline: 'GIS for Mapping Vegetation Coverage',
+    category: 'Full-Stack Web Application',
+    status: 'Completed',
+    image: gisVegetasiImg,
+    role: 'Full-Stack Developer',
+    description: 'A geographic information system mapping vegetation data. The data was surveyed directly from the field in Pekanbaru (PKU) to provide accurate real-world data points.',
+    effect: [
+      'Visualized complex geospatial data accurately',
+      'Integrated real-world field survey data from Pekanbaru'
+    ],
+    stack: ['React', 'JavaScript', 'TailwindCSS', 'Leaflet', 'GIS'],
+    color: '#84cc16',
+    github: 'https://github.com/JNSStudioProject',
+    link: 'https://sistem-informasi-geografis-vegetasi.vercel.app/',
     featured: true
   }
 ];
