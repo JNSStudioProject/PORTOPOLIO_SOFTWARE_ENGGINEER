@@ -39,7 +39,7 @@ export default function Footer() {
             <a href="https://linkedin.com/in/jessica-nathania" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer__social">
               <LinkedinIcon />
             </a>
-            <a href="mailto:jessica.nathania@gmail.com" aria-label="Email" className="footer__social">
+            <a href="mailto:nathaniajessica39@gmail.com" aria-label="Email" className="footer__social">
               <Mail size={16} />
             </a>
           </div>

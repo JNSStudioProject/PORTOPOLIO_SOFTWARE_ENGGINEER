@@ -15,7 +15,7 @@ const LinkedinIcon = ({ size = 18 }) => (
   </svg>
 );
 
-const TITLES = ['Backend Developer', 'Full-Stack Engineer', 'Laravel Specialist', 'Software Engineer'];
+const TITLES = ['Software Engineer', 'Data Engineer', 'Backend Developer', 'Network Enthusiast'];
 
 const STATS = [
   { value: '3.99', label: 'GPA', sub: '/ 4.00 · Cum Laude' },
@@ -50,11 +50,6 @@ export default function Hero() {
       <div className="container hero__inner">
         {/* Left content */}
         <div className="hero__content">
-          {/* Status pill */}
-          <div className="hero__status anim-1">
-            <span className="hero__status-dot" />
-            Open to Software Engineer Internships · 2025
-          </div>
 
           {/* Name */}
           <h1 className="hero__name anim-2">
@@ -70,8 +65,8 @@ export default function Hero() {
           {/* Value prop */}
           <p className="hero__bio anim-4">
             Semester 6, Informatics Engineering · Politeknik Caltex Riau.
-            I build backend systems and web apps that solve real problems —
-            not just assignments.
+            I build backend systems, explore Data Engineering, and have a solid 
+            understanding of basic networking — solving real problems, not just assignments.
           </p>
 
           {/* Location */}
@@ -88,14 +83,14 @@ export default function Hero() {
             >
               See My Work <ArrowRight size={15} />
             </button>
-            <a href="/CV_Jessica_Nathania.pdf" className="btn btn-outline" download>
+            <a href="/CV_Jessica_Nathania_ATS.pdf" className="btn btn-outline" download>
               <Download size={15} /> Download CV
             </a>
           </div>
 
           {/* Social */}
           <div className="hero__socials anim-5">
-            <a href="mailto:muhammadj.nasri@gmail.com" className="hero__social" aria-label="Email">
+            <a href="mailto:nathaniajessica39@gmail.com" className="hero__social" aria-label="Email">
               <Mail size={17} />
               <span>Email Me</span>
             </a>
@@ -103,7 +98,7 @@ export default function Hero() {
               <GithubIcon size={17} />
               <span>GitHub</span>
             </a>
-            <a href="https://linkedin.com/in/muhammad-juna-nasri" target="_blank" rel="noopener noreferrer" className="hero__social" aria-label="LinkedIn">
+            <a href="https://linkedin.com/in/jessica-nathania" target="_blank" rel="noopener noreferrer" className="hero__social" aria-label="LinkedIn">
               <LinkedinIcon size={17} />
               <span>LinkedIn</span>
             </a>

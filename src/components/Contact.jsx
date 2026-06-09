@@ -22,7 +22,7 @@ const WaIcon = ({ size = 18 }) => (
 );
 
 const LINKS = [
-  { Icon: Mail, label: 'Email', value: 'jessicanathania39@gmail.com', href: 'mailto:jessicanathania39@gmail.com', note: 'Responds within 24h' },
+  { Icon: Mail, label: 'Email', value: 'nathaniajessica39@gmail.com', href: 'mailto:nathaniajessica39@gmail.com', note: 'Responds within 24h' },
   { Icon: GithubIcon, label: 'GitHub', value: 'JNSStudioProject', href: 'https://github.com/JNSStudioProject', note: 'View code & repos' },
   { Icon: LinkedinIcon, label: 'LinkedIn', value: 'jessica-nathania', href: 'https://linkedin.com/in/jessica-nathania', note: 'Professional profile' },
   { Icon: WaIcon, label: 'WhatsApp', value: '+6281275860255', href: 'https://wa.me/62', note: 'Quick coordination' },
@@ -52,7 +52,7 @@ export default function Contact() {
               <MapPin size={13} />
               Pekanbaru, Riau · open to hybrid &amp; remote
             </p>
-            <a href="mailto:jessica.nathania@gmail.com" className="btn btn-primary contact__cta">
+            <a href="mailto:nathaniajessica39@gmail.com" className="btn btn-primary contact__cta">
               <Send size={15} /> Send Email
             </a>
           </div>

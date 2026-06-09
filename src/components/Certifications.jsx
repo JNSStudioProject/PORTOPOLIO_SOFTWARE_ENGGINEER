@@ -1,9 +1,9 @@
-import { Award, Cloud, Monitor, Database, FileText, Shield, Globe } from 'lucide-react';
+import { Award, Cloud, Monitor, Database, FileText, Shield, Globe, Brain, BarChart, Code, Server, Terminal, Wifi } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { certifications } from '../data/certifications';
 import './Certifications.css';
 
-const ICONS = { Award, Cloud, Monitor, Database, FileText, Shield, Globe };
+const ICONS = { Award, Cloud, Monitor, Database, FileText, Shield, Globe, Brain, BarChart, Code, Server, Terminal, Wifi };
 
 export default function Certifications() {
   const [ref, isVisible] = useIntersectionObserver();
